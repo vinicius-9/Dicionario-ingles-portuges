@@ -7,17 +7,16 @@
         MinHeight="560" MinWidth="820"
         Background="#0b1120"
         WindowStartupLocation="CenterScreen">
-
     <Window.Resources>
 
         <!-- ── ListBoxItem: sem highlight, sem borda ── -->
         <Style TargetType="ListBoxItem">
-            <Setter Property="Padding"                   Value="0"/>
-            <Setter Property="Margin"                    Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Background"                Value="Transparent"/>
-            <Setter Property="BorderThickness"           Value="0"/>
-            <Setter Property="Focusable"                 Value="False"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Focusable" Value="False"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
@@ -29,14 +28,14 @@
 
         <!-- ── Botão verde (Adicionar / Salvar) ── -->
         <Style x:Key="BtnVerde" TargetType="Button">
-            <Setter Property="Background"    Value="#10b981"/>
-            <Setter Property="Foreground"    Value="White"/>
-            <Setter Property="BorderBrush"   Value="Transparent"/>
+            <Setter Property="Background" Value="#10b981"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Height"        Value="44"/>
-            <Setter Property="FontWeight"    Value="Bold"/>
-            <Setter Property="FontSize"      Value="14"/>
-            <Setter Property="Cursor"        Value="Hand"/>
+            <Setter Property="Height" Value="44"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -83,7 +82,7 @@
         <!-- ── Botão vermelho (Remover no detalhe) ── -->
         <Style x:Key="BtnVermelho" TargetType="Button" BasedOn="{StaticResource BtnVerde}">
             <Setter Property="Background" Value="#7f1d1d"/>
-            <Setter Property="Foreground"  Value="#fca5a5"/>
+            <Setter Property="Foreground" Value="#fca5a5"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -103,12 +102,12 @@
 
         <!-- ── Botão de ícone (editar/remover na lista) ── -->
         <Style x:Key="BtnIcone" TargetType="Button">
-            <Setter Property="Background"      Value="#1f2937"/>
-            <Setter Property="BorderBrush"     Value="Transparent"/>
+            <Setter Property="Background" Value="#1f2937"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Width"           Value="36"/>
-            <Setter Property="Height"          Value="36"/>
-            <Setter Property="Cursor"          Value="Hand"/>
+            <Setter Property="Width" Value="36"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -127,13 +126,13 @@
 
         <!-- ── Botão Voltar (link-style) ── -->
         <Style x:Key="BtnVoltar" TargetType="Button">
-            <Setter Property="Background"      Value="Transparent"/>
-            <Setter Property="Foreground"      Value="#94a3b8"/>
-            <Setter Property="BorderBrush"     Value="Transparent"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#94a3b8"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontSize"        Value="14"/>
-            <Setter Property="Cursor"          Value="Hand"/>
-            <Setter Property="Padding"         Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -154,13 +153,10 @@
         <DrawingImage x:Key="IconePagina">
             <DrawingImage.Drawing>
                 <DrawingGroup>
-                    <!-- corpo do papel -->
                     <GeometryDrawing Brush="#e2e8f0"
                                      Geometry="M 4,1 L 16,1 L 20,5 L 20,23 L 4,23 Z"/>
-                    <!-- sombra leve da dobra -->
                     <GeometryDrawing Brush="#94a3b8"
                                      Geometry="M 16,1 L 16,5 L 20,5 Z"/>
-                    <!-- linha divisória da dobra -->
                     <GeometryDrawing>
                         <GeometryDrawing.Pen><Pen Brush="#64748b" Thickness="0.6"/></GeometryDrawing.Pen>
                         <GeometryDrawing.Geometry>
@@ -172,7 +168,6 @@
                             </PathGeometry>
                         </GeometryDrawing.Geometry>
                     </GeometryDrawing>
-                    <!-- linhas de texto -->
                     <GeometryDrawing>
                         <GeometryDrawing.Pen>
                             <Pen Brush="#64748b" Thickness="1.4" StartLineCap="Round" EndLineCap="Round"/>
@@ -207,56 +202,31 @@
 
                 <!-- Logo + Título -->
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,24">
-                    <!--
-                        LOGO PERSONALIZADA — livro aberto estilizado em forma de "D"
-                        Fundo: violeta #7c3aed (diferente do azul original)
-                        Forma: dois triângulos que imitam páginas abertas
-                              + lombada central + linhas de texto + estrela
-                    -->
                     <Border Width="52" Height="52" Background="#7c3aed" CornerRadius="16">
                         <Viewbox Width="30" Height="30">
                             <Canvas Width="24" Height="24">
-                                <!-- Página esquerda -->
                                 <Path Fill="White" Opacity="0.90"
-                                      Data="M 3,5.5 C 5,5 8.5,4.8 11.2,5.5
-                                            L 11.2,19.5
-                                            C 8.5,18.8 5,18.6 3,18.5 Z"/>
-                                <!-- Página direita -->
+                                      Data="M 3,5.5 C 5,5 8.5,4.8 11.2,5.5 L 11.2,19.5 C 8.5,18.8 5,18.6 3,18.5 Z"/>
                                 <Path Fill="White" Opacity="0.60"
-                                      Data="M 12.8,5.5 C 15.5,4.8 19,5 21,5.5
-                                            L 21,18.5
-                                            C 19,18.6 15.5,18.8 12.8,19.5 Z"/>
-                                <!-- Lombada -->
-                                <Rectangle Canvas.Left="11.2" Canvas.Top="5"
-                                           Width="1.6" Height="14.5"
-                                           Fill="#e9d5ff" Opacity="0.7"/>
-                                <!-- Linhas na página esquerda -->
+                                      Data="M 12.8,5.5 C 15.5,4.8 19,5 21,5.5 L 21,18.5 C 19,18.6 15.5,18.8 12.8,19.5 Z"/>
+                                <Rectangle Canvas.Left="11.2" Canvas.Top="5" Width="1.6" Height="14.5" Fill="#e9d5ff" Opacity="0.7"/>
                                 <Line X1="5"  Y1="9"  X2="10" Y2="9"  Stroke="White" StrokeThickness="0.8" Opacity="0.45"/>
                                 <Line X1="5"  Y1="12" X2="10" Y2="12" Stroke="White" StrokeThickness="0.8" Opacity="0.45"/>
                                 <Line X1="5"  Y1="15" X2="9"  Y2="15" Stroke="White" StrokeThickness="0.8" Opacity="0.45"/>
-                                <!-- Linhas na página direita -->
                                 <Line X1="14" Y1="9"  X2="19" Y2="9"  Stroke="White" StrokeThickness="0.8" Opacity="0.30"/>
                                 <Line X1="14" Y1="12" X2="19" Y2="12" Stroke="White" StrokeThickness="0.8" Opacity="0.30"/>
                                 <Line X1="14" Y1="15" X2="18" Y2="15" Stroke="White" StrokeThickness="0.8" Opacity="0.30"/>
-                                <!-- Estrela decorativa acima -->
-                                <Ellipse Canvas.Left="10.8" Canvas.Top="1.2"
-                                         Width="2.4" Height="2.4" Fill="#e9d5ff"/>
-                                <Line X1="12" Y1="0"   X2="12" Y2="1.1"
-                                      Stroke="#e9d5ff" StrokeThickness="1.2"/>
-                                <Line X1="12" Y1="3.7" X2="12" Y2="4.8"
-                                      Stroke="#e9d5ff" StrokeThickness="1.2"/>
-                                <Line X1="10" Y1="2.4" X2="11" Y2="2.4"
-                                      Stroke="#e9d5ff" StrokeThickness="1.2"/>
-                                <Line X1="13" Y1="2.4" X2="14" Y2="2.4"
-                                      Stroke="#e9d5ff" StrokeThickness="1.2"/>
+                                <Ellipse Canvas.Left="10.8" Canvas.Top="1.2" Width="2.4" Height="2.4" Fill="#e9d5ff"/>
+                                <Line X1="12" Y1="0"   X2="12" Y2="1.1" Stroke="#e9d5ff" StrokeThickness="1.2"/>
+                                <Line X1="12" Y1="3.7" X2="12" Y2="4.8" Stroke="#e9d5ff" StrokeThickness="1.2"/>
+                                <Line X1="10" Y1="2.4" X2="11" Y2="2.4" Stroke="#e9d5ff" StrokeThickness="1.2"/>
+                                <Line X1="13" Y1="2.4" X2="14" Y2="2.4" Stroke="#e9d5ff" StrokeThickness="1.2"/>
                             </Canvas>
                         </Viewbox>
                     </Border>
                     <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
-                        <TextBlock Text="Dicionário"
-                                   FontSize="25" FontWeight="Bold" Foreground="White"/>
-                        <TextBlock Text="Inglês · Português"
-                                   FontSize="11" Foreground="#7c3aed" Margin="0,2,0,0"/>
+                        <TextBlock Text="Dicionário" FontSize="25" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Text="Inglês · Português" FontSize="11" Foreground="#7c3aed" Margin="0,2,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -326,10 +296,7 @@
                              TextChanged="Buscar_TextChanged"
                              Margin="0,0,0,24"/>
 
-                    <!--
-                        BOTÕES — Grid garante que Adicionar e Limpar
-                        apareçam inteiros, cada um ocupando metade da largura
-                    -->
+                    <!-- Botões -->
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -350,7 +317,7 @@
             </DockPanel>
         </Border>
 
-        <!--  PAINEL DIREITO — Lista / Detalhe  -->
+        <!-- PAINEL DIREITO — Lista / Detalhe -->
         <Border Grid.Column="1"
                 Background="#111827" CornerRadius="28" Padding="24"
                 SnapsToDevicePixels="True">
@@ -381,11 +348,6 @@
                 </Grid>
 
                 <!-- ─── VISÃO LISTA ─── -->
-                <!--
-                    ScrollViewer externo com ambas as barras.
-                    ListBox com seus scrollers desabilitados para
-                    que o ScrollViewer externo assuma o controle total.
-                -->
                 <ScrollViewer x:Name="scrollLista"
                               Grid.Row="1"
                               VerticalScrollBarVisibility="Auto"
@@ -400,10 +362,6 @@
                              PreviewMouseWheel="ListaPalavras_PreviewMouseWheel">
                         <ListBox.ItemTemplate>
                             <DataTemplate DataType="{x:Type local:Palavra}">
-                                <!--
-                                    Card da palavra.
-                                    MouseLeftButtonUp abre o detalhe (só se não clicou num botão).
-                                -->
                                 <Border Background="#0f172a" CornerRadius="18"
                                         Padding="18" Margin="0,0,0,12"
                                         Cursor="Hand" MinWidth="420"
@@ -415,7 +373,6 @@
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <!-- Ícone papel/página -->
                                         <Border Width="46" Height="46" CornerRadius="14"
                                                 Background="#1e3a8a" VerticalAlignment="Top">
                                             <Image Source="{StaticResource IconePagina}"
@@ -423,11 +380,9 @@
                                                    RenderOptions.BitmapScalingMode="HighQuality"/>
                                         </Border>
 
-                                        <!-- Textos -->
                                         <StackPanel Grid.Column="1" Margin="14,0,12,0">
                                             <TextBlock Text="{Binding PalavraTexto}"
-                                                       Foreground="White" FontSize="17"
-                                                       FontWeight="SemiBold"/>
+                                                       Foreground="White" FontSize="17" FontWeight="SemiBold"/>
                                             <TextBlock Text="{Binding Significado}"
                                                        Foreground="#cbd5e1" FontSize="13"
                                                        TextWrapping="Wrap" Margin="0,5,0,0"/>
@@ -436,7 +391,6 @@
                                                        TextWrapping="Wrap" Margin="0,4,0,0"/>
                                         </StackPanel>
 
-                                        <!-- Botões editar / remover -->
                                         <StackPanel Grid.Column="2" Orientation="Horizontal"
                                                     VerticalAlignment="Top" Margin="0,2,0,0">
                                             <Button Content="&#xE70F;"
@@ -462,7 +416,7 @@
                     </ListBox>
                 </ScrollViewer>
 
-                <!-- ─── VISÃO DETALHE (oculta por padrão) ─── -->
+                <!-- ─── VISÃO DETALHE ─── -->
                 <ScrollViewer x:Name="scrollDetalhe"
                               Grid.Row="1"
                               Visibility="Collapsed"
@@ -506,8 +460,7 @@
                                                TextWrapping="Wrap" LineHeight="24"/>
                                 </StackPanel>
                             </Border>
-
-                            <!-- Exemplo (oculto se vazio) -->
+                            <!-- EXEMPLO — cada item em seu próprio card (MODIFICADO)-->
                             <Border x:Name="boxExemplo"
                                     Background="#111827" CornerRadius="14"
                                     Padding="18" Margin="0,0,0,28"
@@ -515,11 +468,23 @@
                                 <StackPanel>
                                     <TextBlock Text="EXEMPLO"
                                                Foreground="#7c3aed" FontSize="10"
-                                               FontWeight="Bold" Margin="0,0,0,8"/>
-                                    <TextBlock x:Name="lblDetalheExemplo"
-                                               Foreground="#94a3b8" FontSize="15"
-                                               TextWrapping="Wrap" FontStyle="Italic"
-                                               LineHeight="22"/>
+                                               FontWeight="Bold" Margin="0,0,0,10"/>
+
+                                    <!-- Lista de exemplos separados -->
+                                    <ItemsControl x:Name="listaExemplos">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="#0d1a2e" CornerRadius="8"
+                                                        Padding="12,10" Margin="0,0,0,8">
+                                                    <TextBlock Text="{Binding}"
+                                                               Foreground="#94a3b8" FontSize="15"
+                                                               TextWrapping="Wrap" FontStyle="Italic"
+                                                               LineHeight="22"/>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
                                 </StackPanel>
                             </Border>
 
@@ -531,11 +496,11 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="0"
-                                        Content="✏  Editar"
+                                        Content="✏ Editar"
                                         Style="{StaticResource BtnVerde}"
                                         Click="EditarDetalhe_Click"/>
                                 <Button Grid.Column="2"
-                                        Content="🗑  Remover"
+                                        Content="🗑 Remover"
                                         Style="{StaticResource BtnVermelho}"
                                         Click="RemoverDetalhe_Click"/>
                             </Grid>
@@ -546,5 +511,6 @@
 
             </Grid>
         </Border>
+
     </Grid>
 </Window>
