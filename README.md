@@ -13,6 +13,18 @@ A versão pronta para usar está aqui:
 
 Baixe, extraia e use.  Sem instalar nada.
 
+## ⚠️ Windows bloqueou o aplicativo?
+
+### Opção 1
+1. Clique em **Mais informações**
+2. Clique em **Executar assim mesmo**
+
+### Opção 2
+1. Clique com o botão direito no arquivo `.exe`
+2. Abra **Propriedades**
+3. Marque **Desbloquear**
+4. Clique em **Aplicar** e depois em **OK**
+
 
 ---
 
